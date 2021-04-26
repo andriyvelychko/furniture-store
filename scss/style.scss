@@ -1,0 +1,95 @@
+@import "vars";
+@import "libs";
+@import "fonts";
+@import "global";
+
+//Text
+h1{
+	font-size: 64px;
+}
+h2{
+	font-size: 48px;
+}
+h3{
+	font-size: 36px;
+	line-height: 125%;
+}
+h4{
+	font-size: 24px;
+	line-height: 125%;
+}
+.banner__slider-content__text{
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	line-height: 125%;
+}
+.banner__slider-content__numbering-slide{
+	font-size: 36px;
+	line-height: 125%;
+	color: $text-color-dark;
+	span{
+		font-size: 24px;
+	}
+}
+
+/*Buttons*/
+.btn{
+	display: block;
+	padding: 14px 46px;
+	background: $light-green-color;
+	border:none;
+	border-radius: 3px;
+	color: $text-color-light;
+	text-transform: uppercase;
+	line-height: 125%;
+
+}
+.btn-slider{
+	border-radius: 50%;
+	border: 1px solid $text-color-dark;
+	background-color: transparent;
+	padding: 5px;
+}
+
+/*Banner*/
+.banner{
+	position: relative;
+	&__slider-content{
+		position: absolute;
+		top: 0;
+		width: 462px;
+		text-align: center;
+		padding: 100px 74px 100px 75px;
+		margin-left: 15px;
+		border-left: 15px solid $light-green-color;
+		background-color: $color-white;
+		h3{
+			padding-top: 50px;
+		}
+		&__text{
+			padding-top: 10px;
+		}
+		.btn{
+			margin: 30px auto 50px;
+		}
+		&__arrows{
+			padding: 0;
+			top: 61%;
+		}
+		
+		
+	}
+	.icon-chevron-left,
+	.icon-chevron-right{
+		font-size: 20px;
+		letter-spacing: 0;
+		line-height: 100%;
+	}
+}
+
+
+
+
+
+@import "media";

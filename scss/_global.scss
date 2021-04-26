@@ -1,0 +1,33 @@
+html{
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    color: $text-color-dark;
+    
+}
+a{
+    text-decoration: none;
+}
+ul,
+li{
+   list-style: none; 
+}
+.wrapper {
+	max-width: 1818px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 20px;
+}
