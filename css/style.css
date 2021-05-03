@@ -604,4 +604,177 @@ body.touch .arrow {
   letter-spacing: 0;
   line-height: 100%;
 }
+
+/*End Banner*/
+.products {
+  padding: 50px 20px;
+}
+
+.products input {
+  -moz-appearance: checkbox;
+       appearance: checkbox;
+  -webkit-appearance: checkbox;
+}
+
+.products__filter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 300px;
+  -webkit-box-shadow: 0px 0px 50px -10px #1E2E36;
+          box-shadow: 0px 0px 50px -10px #1E2E36;
+  padding: 20px;
+}
+
+.products__filter-price-range {
+  /* Proof of concept for Firefox */
+}
+
+.products__filter-price-range input[type='range'] {
+  width: 210px;
+  height: 30px;
+  overflow: hidden;
+  cursor: pointer;
+  outline: none;
+}
+
+.products__filter-price-range input[type='range'],
+.products__filter-price-range input[type='range']::-webkit-slider-runnable-track,
+.products__filter-price-range input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background: none;
+}
+
+.products__filter-price-range input[type='range']::-webkit-slider-runnable-track {
+  width: 200px;
+  height: 1px;
+  background: #003D7C;
+}
+
+.products__filter-price-range input[type='range']:nth-child(2)::-webkit-slider-runnable-track {
+  background: none;
+}
+
+.products__filter-price-range input[type='range']::-webkit-slider-thumb {
+  position: relative;
+  height: 15px;
+  width: 15px;
+  margin-top: -7px;
+  background: #fff;
+  border: 1px solid #003D7C;
+  border-radius: 25px;
+  z-index: 1;
+}
+
+.products__filter-price-range input[type='range']:nth-child(1)::-webkit-slider-thumb {
+  z-index: 2;
+}
+
+.products__filter-price-range .rangeslider {
+  position: relative;
+  height: 60px;
+  width: 210px;
+  display: inline-block;
+  margin-top: -5px;
+  margin-left: 20px;
+}
+
+.products__filter-price-range .rangeslider input {
+  position: absolute;
+}
+
+.products__filter-price-range .rangeslider {
+  position: absolute;
+}
+
+.products__filter-price-range .rangeslider span {
+  position: absolute;
+  margin-top: 30px;
+  left: 0;
+}
+
+.products__filter-price-range .rangeslider .right {
+  position: relative;
+  float: right;
+  margin-right: -5px;
+}
+
+@-moz-document url-prefix() {
+  .products__filter-price-range .rangeslider::before {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #003D7C;
+    display: block;
+    position: relative;
+    top: 16px;
+  }
+  .products__filter-price-range input[type='range']:nth-child(1) {
+    position: absolute;
+    top: 35px !important;
+    overflow: visible !important;
+    height: 0;
+  }
+  .products__filter-price-range input[type='range']:nth-child(2) {
+    position: absolute;
+    top: 35px !important;
+    overflow: visible !important;
+    height: 0;
+  }
+  .products__filter-price-range input[type='range']::-moz-range-thumb {
+    position: relative;
+    height: 15px;
+    width: 15px;
+    margin-top: -7px;
+    background: #fff;
+    border: 1px solid #003D7C;
+    border-radius: 25px;
+    z-index: 1;
+  }
+  .products__filter-price-range input[type='range']:nth-child(1)::-moz-range-thumb {
+    transform: translateY(-20px);
+  }
+  .products__filter-price-range input[type='range']:nth-child(2)::-moz-range-thumb {
+    transform: translateY(-20px);
+  }
+}
+
+.products__filter-title {
+  margin-bottom: 15px;
+}
+
+.products__filter-style {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 0 30px 0;
+}
+
+.products__filter-style hr {
+  margin-top: 5px;
+}
+
+.products__filter-style label {
+  margin-bottom: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.products__filter-style label input {
+  margin-right: 15px;
+  height: 25px;
+  width: 25px;
+}
 /*# sourceMappingURL=style.css.map */

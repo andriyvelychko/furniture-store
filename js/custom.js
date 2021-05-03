@@ -1,3 +1,4 @@
+//button for mobie version
 let isMobile = {
     Android: function () { return navigator.userAgent.match(/Android/i); },
     BlackBerry: function () { return navigator.userAgent.match(/BlackBerry/i); },
@@ -28,6 +29,7 @@ if (isMobile.any()) {
 }
 
 $(function () {
+//menu fixed
     menu_top = $('.header').offset().top;        // запоминаем положение меню
     $(window).scroll(function () {             // отслеживаем событие прокрутки страницы
         if ($(window).scrollTop() > menu_top) {  // если прокрутка дошла до меню
@@ -45,7 +47,7 @@ $(function () {
         }
     });
 
-    
+//banner slider  
 var $status = $('.banner__slider-content__numbering-slide');
 /* var $statusTotal = $('.banner__slider-content__numbering-slide-total'); */
 var $slickElement = $('.banner__slider');
@@ -69,22 +71,24 @@ $slickElement.slick({
     nextArrow: '<button id="next" type="button" class="btn-slider btn-juliet"><span class="icon-chevron-right"></span></button>'
 
 });
-});
-/* 
-$(".banner__slider").on("init afterChange", function (event, slick, currentSlide, nextSlide) {
-    var i = (currentSlide ? currentSlide : 0) + 1;
-    $(".banner__slider-content__numbering-slide span").text(i);
+
+
+
+//filter
+    $("#slider-range").slider({
+        range: true,
+        min: 0,
+        max: 50000,
+        values: [4000, 15000],
+        slide: function (event, ui) {
+            $("#amount").val(ui.values[0] + " ₽" + "  -  " + ui.values[1] + " ₽");
+        }
+    });
+    $("#amount").val($("#slider-range").slider("values", 0) + " ₽" +
+        "  -  " + $("#slider-range").slider("values", 1) + " ₽");
 });
 
-$('.banner__slider').slick({
-    arrows: true,
-    infinite: true,
-    speed: 300,
-    slidesToShow: 1,
-    fade: true,
-    adaptiveHeight: true
 
-}); */
    
 
 
