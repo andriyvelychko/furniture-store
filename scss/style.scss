@@ -18,6 +18,70 @@ h4{
 	font-size: 24px;
 	line-height: 125%;
 }
+.menu__link {
+	font-style: normal;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 125%;
+	}
+
+.menu {
+	li{
+		position: relative;
+	}
+	&__list {
+		display: flex;
+		&>li{
+			margin: 0 15px 0 0;
+			transition: 3s all;
+		}
+	}
+	.parent{
+		margin: 0 16px 0 0;
+	}
+	.arrow {
+		display: none;
+		position: absolute;
+		top: 5px;
+		right: 0;
+		font-size: 15px;
+	}
+	.arrow.active{
+		transform: rotate(-180deg);
+	}
+	.sub-menu__list {
+		display: none;
+		min-width: 300px;
+		position: absolute;
+		left: 0;
+		top: 20px;
+		padding: 10px 0 0 0;
+		border-left: 5px solid $light-green-color;
+		&>li{
+			background-color: $color-white;
+		}
+	}
+	.sub-menu__link {
+		color: $text-color-dark;
+		display: inline-block;
+		padding: 5px 10px 5px 10px;
+		transition: all 0.3s;
+		&:hover{
+			color: $text-color-light;
+			background-color: $light-green-color;
+		}
+	}
+}
+
+body.mouse .menu__list>li:hover .sub-menu__list{
+	display: block;
+}
+body.touch .sub-menu__list.open{
+	display: block;
+}
+body.touch .arrow{
+	display: block;
+}
 .banner__slider-content__text{
 	font-style: normal;
 	font-weight: normal;

@@ -324,6 +324,85 @@ h4 {
   line-height: 125%;
 }
 
+.menu__link {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 125%;
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.menu__list > li {
+  margin: 0 15px 0 0;
+  -webkit-transition: 3s all;
+  transition: 3s all;
+}
+
+.menu .parent {
+  margin: 0 16px 0 0;
+}
+
+.menu .arrow {
+  display: none;
+  position: absolute;
+  top: 5px;
+  right: 0;
+  font-size: 15px;
+}
+
+.menu .arrow.active {
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+}
+
+.menu .sub-menu__list {
+  display: none;
+  min-width: 300px;
+  position: absolute;
+  left: 0;
+  top: 20px;
+  padding: 10px 0 0 0;
+  border-left: 5px solid #44C697;
+}
+
+.menu .sub-menu__list > li {
+  background-color: #FFFFFF;
+}
+
+.menu .sub-menu__link {
+  color: #1E2E36;
+  display: inline-block;
+  padding: 5px 10px 5px 10px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.menu .sub-menu__link:hover {
+  color: #FFFFFF;
+  background-color: #44C697;
+}
+
+body.mouse .menu__list > li:hover .sub-menu__list {
+  display: block;
+}
+
+body.touch .sub-menu__list.open {
+  display: block;
+}
+
+body.touch .arrow {
+  display: block;
+}
+
 .banner__slider-content__text {
   font-style: normal;
   font-weight: normal;
