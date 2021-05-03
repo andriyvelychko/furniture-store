@@ -3,7 +3,14 @@
 @import "fonts";
 @import "global";
 
-//Text
+//Text style
+body{
+    font-family: Proxima Nova Rg;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    color: $text-color-dark;
+}
 h1{
 	font-size: 64px;
 }
@@ -18,69 +25,37 @@ h4{
 	font-size: 24px;
 	line-height: 125%;
 }
+.btn{
+	font-family: Proxima Nova Rg;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 18px;
+	text-transform: uppercase;
+}
 .menu__link {
 	font-style: normal;
 	font-weight: bold;
 	font-size: 18px;
 	line-height: 125%;
-	}
-
-.menu {
-	li{
-		position: relative;
-	}
-	&__list {
-		display: flex;
-		&>li{
-			margin: 0 15px 0 0;
-			transition: 3s all;
-		}
-	}
-	.parent{
-		margin: 0 16px 0 0;
-	}
-	.arrow {
-		display: none;
-		position: absolute;
-		top: 5px;
-		right: 0;
-		font-size: 15px;
-	}
-	.arrow.active{
-		transform: rotate(-180deg);
-	}
-	.sub-menu__list {
-		display: none;
-		min-width: 300px;
-		position: absolute;
-		left: 0;
-		top: 20px;
-		padding: 10px 0 0 0;
-		border-left: 5px solid $light-green-color;
-		&>li{
-			background-color: $color-white;
-		}
-	}
-	.sub-menu__link {
-		color: $text-color-dark;
-		display: inline-block;
-		padding: 5px 10px 5px 10px;
-		transition: all 0.3s;
-		&:hover{
-			color: $text-color-light;
-			background-color: $light-green-color;
-		}
-	}
+	text-transform: uppercase;
 }
-
-body.mouse .menu__list>li:hover .sub-menu__list{
-	display: block;
+.logo__text{
+	
+	font-style: normal;
+	font-weight: bold;
+	font-size: 36px;
+	line-height: 125%;
 }
-body.touch .sub-menu__list.open{
-	display: block;
+.logo__text:first-letter{
+	color: $light-green-color;
 }
-body.touch .arrow{
-	display: block;
+.btn-shop__text{
+	font-family: Proxima Nova Rg;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 125%;
+	text-transform: uppercase;
 }
 .banner__slider-content__text{
 	font-style: normal;
@@ -96,7 +71,7 @@ body.touch .arrow{
 		font-size: 24px;
 	}
 }
-
+//End text style
 /*Buttons*/
 .btn{
 	display: block;
@@ -105,9 +80,19 @@ body.touch .arrow{
 	border:none;
 	border-radius: 3px;
 	color: $text-color-light;
-	text-transform: uppercase;
 	line-height: 125%;
 
+}
+.btn-shop{
+	display: inline-flex;
+	align-items: center;
+	border: none;
+	background-color: transparent;
+	img{
+		height: 30px;
+		width: 30px;
+		margin-right: 5px;
+	}
 }
 .btn-slider{
 	border-radius: 50%;
@@ -115,10 +100,114 @@ body.touch .arrow{
 	background-color: transparent;
 	padding: 5px;
 }
+/*End Buttons*/
+/*HEADER*/
+.header{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	// position: fixed;
+	width: 100%;
+	z-index: 999;
+	background-color: $color-white;
+	padding: 15px 20px;
+	.menu {
+		margin-right: 20px;
+		li{
+			position: relative;
+		}
+		&__list {
+			display: flex;
+			&>li{
+				margin: 0 15px 0 0;
+				transition: 3s all;
+			}
+		}
+		.parent{
+			margin: 0 16px 0 0;
+		}
+		.arrow {
+			display: none;
+			position: absolute;
+			top: 5px;
+			right: 0;
+			font-size: 15px;
+		}
+		.arrow.active{
+			transform: rotate(-180deg);
+		}
+		.sub-menu__list {
+			display: none;
+			z-index: 2;
+			/* min-width: 250px; */
+			position: absolute;
+			left: 0;
+			top: 20px;
+			padding: 10px 0 0 0;
+			border-left: 5px solid $light-green-color;
+			box-shadow: 10px 10px 12px -10px $text-color-dark;
+			&>li{
+				background-color: $color-white;
+			}
+		}
+		.sub-menu__link {
+			color: $text-color-dark;
+			display: block;
+			padding: 5px 10px 5px 10px;
+			white-space: nowrap;
+			transition: all 0.3s;
+			&:hover{
+				color: $text-color-light;
+				background-color: $light-green-color;
+			}
+		}
+	}
+	.logo{
+		flex: 0 1 auto;
+		position: relative;
+		margin-right: 20px;
+		z-index: 1;
+		a{
+			display: inline-flex;
+			align-items: center;
+			img{
+				width: 125px;
+				height: 75px;
+				margin-right: 15px;
+			}
+			.logo__text{
 
+			}
+		}
+	}
+	&__buttons{
+		display: flex;
+		align-items: center;
+		.btn-shop{
+			margin-right: 30px;
+		}
+	}
+}
+/*Mobile buttons active*/
+body.mouse .menu__list>li:hover .sub-menu__list{
+	display: block;
+}
+body.touch .sub-menu__list.open{
+	display: block;
+}
+body.touch .arrow{
+	display: block;
+}
+/*End HEADER*/
 /*Banner*/
 .banner{
 	position: relative;
+	&__slider-item>img{
+		object-fit: fill;
+		height: 785px;
+		width: 100%;
+	}
 	&__slider-content{
 		position: absolute;
 		top: 0;
@@ -140,9 +229,10 @@ body.touch .arrow{
 		&__arrows{
 			padding: 0;
 			top: 61%;
+			.btn-slider{
+				margin: 4px;
+			}
 		}
-		
-		
 	}
 	.icon-chevron-left,
 	.icon-chevron-right{

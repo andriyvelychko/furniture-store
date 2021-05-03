@@ -27,7 +27,25 @@ if (isMobile.any()) {
     body.classList.add('mouse');
 }
 
+$(function () {
+    menu_top = $('.header').offset().top;        // запоминаем положение меню
+    $(window).scroll(function () {             // отслеживаем событие прокрутки страницы
+        if ($(window).scrollTop() > menu_top) {  // если прокрутка дошла до меню
+            if ($('.header').css('position') != 'fixed') {  // проверяем, если меню еще не зафиксировано
+                $('.header').css('position', 'fixed');  // задаем блоку меню свойство position = fixed
+                $('.header').css('top', '0');           // положение в самом верху
+                $('.banner').css('margin-top', '100px'); // делаем отступ, чтобы контент не "скакал" в момент фиксации меню
+            }
+        } else {                                 // прокрутка страницы обратно вверх достигла место "перехода" меню
+            if ($('.header').css('position') == 'fixed') {  // если меню зафиксировано
+                $('.header').css('position', '');
+                $('.header').css('top', '');
+                $('.banner').css('margin-top', '');
+            }
+        }
+    });
 
+    
 var $status = $('.banner__slider-content__numbering-slide');
 /* var $statusTotal = $('.banner__slider-content__numbering-slide-total'); */
 var $slickElement = $('.banner__slider');
@@ -50,6 +68,7 @@ $slickElement.slick({
     prevArrow: '<button id="prev" type="button" class="btn-slider btn-juliet"><span class="icon-chevron-left"></span></button>',
     nextArrow: '<button id="next" type="button" class="btn-slider btn-juliet"><span class="icon-chevron-right"></span></button>'
 
+});
 });
 /* 
 $(".banner__slider").on("init afterChange", function (event, slick, currentSlide, nextSlide) {
