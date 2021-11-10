@@ -19,7 +19,7 @@ if (isMobile.any()) {
         let thisArrow = arrow[i];
 
         thisLink.classList.add('parent');
-       arrow[i].addEventListener('click', function() {
+       arrow[i].addEventListener('mouseover', function() {
            subMenu.classList.toggle('open');
            thisArrow.classList.toggle('active');
        });
