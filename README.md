@@ -1,2 +1,4 @@
 # furniture-store
-https://andriyvelychko.github.io/flovers/
+
+https://andriyvelychko.github.io/furniture-store/
+
